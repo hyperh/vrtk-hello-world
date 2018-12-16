@@ -4,6 +4,7 @@ namespace MyStuff {
 	using UnityEngine.UI;
     using VRTK;
     using System.Collections.Generic;
+	using System.Collections;
 
 	public class Lock : MonoBehaviour {
 
@@ -43,7 +44,7 @@ namespace MyStuff {
 			UpdateDisplay();
 		}
 
-		public bool Submit() {
+		public bool IsAttemptCorrect() {
 			if (passwordAttempt.Count != password.Count) {
 				ClearDisplay();
 				return false;
@@ -57,8 +58,28 @@ namespace MyStuff {
 				}
 			}
 			VRTK_Logger.Info(string.Format("Lock.Submit {0}", isAttemptCorrect));
-			if (!isAttemptCorrect) ClearDisplay();
 			return isAttemptCorrect;
+		}
+
+		public IEnumerator ShowWrong() {
+			for (int i = 0; i < 6; i++) {
+				if (i % 2 == 0) {
+					displayText.text = "WRONG";
+				} else {
+					ClearDisplay();
+				}
+				yield return new WaitForSeconds(0.5f);
+			}
+		}
+
+		public void Submit() {
+			bool isAttemptCorrect = IsAttemptCorrect();
+
+			if (!isAttemptCorrect) {
+				StartCoroutine(ShowWrong());
+			} else {
+				displayText.text = "CORRECT";
+			}
 		}
 		
 	}
