@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 23736540707204860}
   - component: {fileID: 65988657708496722}
   - component: {fileID: 114778293344503456}
+  - component: {fileID: 114555136774831558}
   m_Layer: 0
   m_Name: NumberBtn
   m_TagString: Untagged
@@ -209,6 +210,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114555136774831558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763164891649908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08517e04830d6d44a13c5ea5f574181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  unhighlightOnDisable: 1
+  thickness: 1
+  customOutlineModels: []
+  customOutlineModelPaths: []
+  enableSubmeshHighlight: 0
 --- !u!114 &114679400446787452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: -10000
   numberText: {fileID: 114374052662707228}
+  myLock: {fileID: 0}
 --- !u!222 &222152218796660124
 CanvasRenderer:
   m_ObjectHideFlags: 1
