@@ -79,7 +79,7 @@
 
         protected virtual void ToggleHighlight(Transform target, Color color)
         {
-            VRTK_BaseHighlighter highligher = (target != null ? target.GetComponentInChildren<VRTK_BaseHighlighter>() : null);
+            VRTK_BaseHighlighter highligher = (target != null ? target.GetComponent<VRTK_BaseHighlighter>() : null);
             if (highligher != null)
             {
                 highligher.Initialise();
