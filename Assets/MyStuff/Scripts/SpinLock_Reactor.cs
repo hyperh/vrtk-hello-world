@@ -23,6 +23,7 @@
             lockData.UpdateAttempt(e.value.ToString());
             bool isAttemptCorrect = lockData.CheckAttempt();
             if (isAttemptCorrect) {
+                // Can't seem to interact with spinControl properly when doorControl is enabled. Need to keep doorControl disabled before unlocking.
                 doorControl.enabled = true;
                 spinControl.enabled = false;
             }
