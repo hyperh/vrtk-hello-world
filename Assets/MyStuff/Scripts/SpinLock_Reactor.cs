@@ -9,6 +9,7 @@
    		public VRTK_BaseControllable spinControl;
         public VRTK_BaseControllable doorControl;
         public Lock2_Data lockData;
+        public AudioSource openDoorSound;
 
         protected virtual void OnEnable()
         {
@@ -26,6 +27,7 @@
                 // Can't seem to interact with spinControl properly when doorControl is enabled. Need to keep doorControl disabled before unlocking.
                 doorControl.enabled = true;
                 spinControl.enabled = false;
+                openDoorSound.Play();
             }
             VRTK_Logger.Info(string.Format("Lock2_Reactor.ValueChanged {0}", e.value.ToString()));
         }
