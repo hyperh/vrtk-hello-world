@@ -4,7 +4,6 @@
 	using UnityEngine.UI;
     using VRTK;
 	using VRTK.Controllables;
-    using VRTK.Controllables.PhysicsBased;
 
 	public class SpinLock_Reactor : MonoBehaviour {
    		public VRTK_BaseControllable spinControl;
